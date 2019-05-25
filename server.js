@@ -14,7 +14,7 @@ client.on('message', function(m) {
 	}
 });
 
-client.login('NDIzMDQwMjUwMDEzNjc5NjI2.XOflaA.XvFQAQlT3H2797kTyYeRVUW56Hw');
+client.login('');
 
 //---------------------------------------------------------------------------------------------------
 //dice rolling functions
