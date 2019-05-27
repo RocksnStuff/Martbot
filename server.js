@@ -1,8 +1,13 @@
+const tok = require('../key.js')
 const request = require('request');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.once('ready', function() {
+	console.log('ready');
+	//client.users.find('tag', 'Talistan#5065').sendMessage('that is martae, the last message is link to a trojan virus, DO NOT click on it, a made a mistake and the bot was temporeraly hacked');
+	//client.users.find('tag', 'howdym9s#0211').sendMessage('that is martae, the last message is link to a trojan virus, DO NOT click on it, a made a mistake and the bot was temporeraly hacked');
+	//client.users.find('tag', 'Scruffy Lookin\' Nerd Herder#5409').sendMessage('that is martae, the last message is link to a trojan virus, DO NOT click on it, a made a mistake and the bot was temporeraly hacked');
 });
 
 client.on('message', function(m) {
@@ -14,7 +19,7 @@ client.on('message', function(m) {
 	}
 });
 
-client.login('NDIzMDQwMjUwMDEzNjc5NjI2.XOkcow.RAtXi81wgubFIOa5SFry_6FcEEI');
+client.login(tok.token);
 
 //---------------------------------------------------------------------------------------------------
 //dice rolling functions
