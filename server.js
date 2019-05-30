@@ -5,9 +5,6 @@ const client = new Discord.Client();
 
 client.once('ready', function() {
 	console.log('ready');
-	//client.users.find('tag', 'Talistan#5065').sendMessage('that is martae, the last message is link to a trojan virus, DO NOT click on it, a made a mistake and the bot was temporeraly hacked');
-	//client.users.find('tag', 'howdym9s#0211').sendMessage('that is martae, the last message is link to a trojan virus, DO NOT click on it, a made a mistake and the bot was temporeraly hacked');
-	//client.users.find('tag', 'Scruffy Lookin\' Nerd Herder#5409').sendMessage('that is martae, the last message is link to a trojan virus, DO NOT click on it, a made a mistake and the bot was temporeraly hacked');
 });
 
 client.on('message', function(m) {
