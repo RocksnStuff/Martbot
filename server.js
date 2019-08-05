@@ -3,7 +3,7 @@ const request = require('request');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-var songState = false;
+var songState;
 var stateCount = 0;
 var lyrics;
 
@@ -22,8 +22,8 @@ client.on('message', function(m) {
 		});
 	}
 	
-	if ( (sanitiseTextCreeper(m.content) == 'CREEPER' && !songState) || (songState && m.author != client.user) ) {
-		songState = true;
+	if ( (sanitiseTextCreeper(m.content) == 'CREEPER' && !songState) || (songState == m.channel && m.author != client.user) ) {
+		songState = m.channel;
 		
 		runSong(m.content, m.channel);
 	}
@@ -59,7 +59,7 @@ function runSong(msg, chn) {
 		if (stateCount == lyrics.length - 1) {
 			chn.send('Congrations you done it');
 			
-			songState = false;
+			songState = null;
 			
 			stateCount = 0;
 			
@@ -73,12 +73,12 @@ function runSong(msg, chn) {
 		if (stateCount == lyrics.length) {
 			chn.send('Congrations you done it');
 			
-			songState = false;
+			songState = null;
 			
 			stateCount = 0;
 		}
 	} else {
-		songState = false;
+		songState = null;
 		
 		chn.send('Fucking kill yourself cunt');
 		
